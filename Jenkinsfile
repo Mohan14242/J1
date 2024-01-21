@@ -2,25 +2,28 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
+        stage('ansible stage') {
             agent {
                 label 'ansible'
             }
             steps {
-                script {
-                    git url: 'https://github.com/Mohan14242/jenkins2.git'
-                    dir('jenkins2') {
-                        // Add more Ansible commands or other build steps here if needed
-                    }
-                }
+                sh '''
+                git clone https://github.com/Mohan14242/A1.git
+                cd A1
+                '''
             }
         }
 
-        stage("Testing Stage") {
+        stage("Terraform stage") {
+            agent{
+                label 'terraform'
+            }
             steps {
-                script {
-                    echo "This is Chiru. Who are you?"
-                }
+               sh '''
+               git clone https://github.com/Mohan14242/T1.git
+               cd T1
+
+                '''
             }
         }
     }
