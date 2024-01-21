@@ -1,5 +1,5 @@
 pipeline{
-    agent None
+    agent any
 
     stages{
         stage('build'){
@@ -7,7 +7,7 @@ pipeline{
                 label 'ansible'
             }
                 script{
-                    git clone https://github.com/Mohan14242/jenkins2.git
+                    git clone url: 'https://github.com/Mohan14242/jenkins2.git'
                     cd jenkins 
                     ansible -i inventory.ini all -m ping
                 }
