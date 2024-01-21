@@ -5,6 +5,7 @@ pipeline{
         stage('build'){
             agent{
                 label 'ansible'
+            }
                 script{
                     git clone https://github.com/Mohan14242/jenkins2.git
                     cd jenkins 
