@@ -8,6 +8,7 @@ pipeline {
             }
             steps {
                 sh '''
+                rm -rf A1
                 git clone https://github.com/Mohan14242/A1.git
                 cd A1
                 '''
@@ -20,6 +21,7 @@ pipeline {
             }
             steps {
                sh '''
+               rm -rf T1
                git clone https://github.com/Mohan14242/T1.git
                cd T1
 
