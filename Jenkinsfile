@@ -1,15 +1,20 @@
 pipeline{
-    agent { node { label "agent1"}}
+    agent any
     stages{
         stage("build"){
+            agent { lable "agent1"}
             steps{
-                echo 'this stage is bulding stage '
+                sh '''
+                ls -la'''
 
             }
         }
         stage("test"){
+            agent { lable "agent2" }
             steps{
-                echo "this stage is test stage"
+               script{
+                ls -la
+               }
             }
         }
         stage("plan"){
