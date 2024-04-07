@@ -1,16 +1,20 @@
-pipeline{
-    agent any 
-    environment{
-        user_details=credentials("ssh-auth")
+pipeline {
+    agent any
+    environment {
+        SSH_CREDENTIALS = credentials('ssh-auth')
+        SERVER_HOST = '3.81.211.54'
+        SERVER_USER = 'centos'
     }
-    stages{
-        stage("printing the credentials"){
-            steps{
-                script{
-                    echo "the user_name is ${user_details_usr} and password is ${user_details_psw}"
+    stages {
+        stage('Connect to Server') {
+            steps {
+                script {
+                    sshagent(credentials: [SSH_CREDENTIALS]) {
+                        sh "ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} 'echo Connected'"
+                    }
                 }
             }
         }
-
+        // Additional stages
     }
 }
