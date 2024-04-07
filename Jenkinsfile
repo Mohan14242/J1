@@ -5,7 +5,7 @@ pipeline{
     }
     stages{
         stage("printing the credentials"){
-            script{
+            steps{
                 script{
                     sh "the user_name is ${user_details_usr} and password is ${user_details_psw}"
                 }
