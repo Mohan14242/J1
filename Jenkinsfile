@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("mohan"){
             options{
-            timeout(time:1,unit:"MINUTES",messsage:"this has timeout")
+            timeout(time:1,unit:"MINUTES")
             }
             steps{
                 script{
@@ -13,7 +13,7 @@ pipeline{
         }
         stage("chiru"){
             options{
-            timeout(time:1,unit:"MINUTES",skip:true)
+            timeout(time:1,unit:"MINUTES")
             }
             steps{
                 script{
