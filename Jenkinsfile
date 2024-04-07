@@ -18,7 +18,7 @@ pipeline{
             }
         }
         stage("plan"){
-            step{
+            steps{
                 echo "this is teh plan stage"
             }
         }
