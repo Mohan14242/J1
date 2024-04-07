@@ -1,29 +1,20 @@
-pipeline {
-    agent any
+pipeline{
+    agent any 
+    stages{
+        stage("build"){
+            steps{
+                echo 'this stage is bulding stage '
 
-    stages {
-        stage('ansible stage') {
-            agent {
-                label 'ansible'
-            }
-            steps {
-                sh '''
-                git clone https://github.com/Mohan14242/A1.git
-                cd A1
-                '''
             }
         }
-
-        stage("Terraform stage") {
-            agent{
-                label 'terraform'
+        stage("test"){
+            steps{
+                echo "this stage is test stage"
             }
-            steps {
-               sh '''
-               git clone https://github.com/Mohan14242/T1.git
-               cd T1
-
-                '''
+        }
+        stage("plan"){
+            steps{
+                echo "this is teh plan stage"
             }
         }
     }
