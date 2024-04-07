@@ -1,20 +1,23 @@
-pipeline {
-    agent any
-    environment {
-        SSH_CREDENTIALS = credentials('ssh-auth')
-        SERVER_HOST = '3.81.211.54'
-        SERVER_USER = 'centos'
-    }
-    stages {
-        stage('Connect to Server') {
-            steps {
-                script {
-                    sshagent(credentials: [SSH_CREDENTIALS]) {
-                        sh "ssh -o StrictHostKeyChecking=no ${SERVER_USER}@${SERVER_HOST} 'echo Connected'"
-                    }
+pipeline{
+    agent any 
+    stages{
+        stage("mohan"){
+            timeout(time:1,unit:"MINUTES",messsage:"this has timeout")
+            steps{
+                script{
+                    sh'sleep 100'
                 }
             }
         }
-        // Additional stages
+        stage("chiru"){
+            timeout(time:1,unit:"MINUTES",skip:true)
+            steps{
+                script{
+                    sh "sleep 100"
+                }
+            }
+        }
+
+        
     }
 }
