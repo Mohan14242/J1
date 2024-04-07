@@ -13,7 +13,7 @@ pipeline{
             agent { label "agent2" }
             steps{
                script{
-                ls -la
+                sh 'ls -la'
                }
             }
         }
