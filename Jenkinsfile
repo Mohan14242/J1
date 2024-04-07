@@ -30,7 +30,7 @@ pipeline{
         success{
             echo "this will run only if pipeline get sucess"
         }
-        failue{
+        failure{
             echo "thiw will run only if the piepeline failyres"
         }
         changed{
