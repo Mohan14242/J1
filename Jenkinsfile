@@ -1,43 +1,16 @@
 pipeline{
-    agent any
-    stages{
-        stage("build"){
-            agent { label "agent1"}
-            steps{
-                sh '''
-                ls -la'''
-
-            }
-        }
-        stage("test"){
-            agent { label "agent2" }
-            steps{
-               script{
-                sh 'ls -la'
-               }
-            }
-        }
-        stage("plan"){
-            steps{
-                echo "this is teh plan stage"
-            }
-        }
+    agent any 
+    environment{
+        user_details=credentials("ssh-auth")
     }
-    post{
-        always{
-            echo "this will always execute"
+    stages{
+        stage("printing the credentials"){
+            script{
+                script{
+                    sh "the user_name is ${user_details_usr} and password is ${user_details_psw}"
+                }
+            }
         }
-        success{
-            echo "this will run only if pipeline get sucess"
-        }
-        failure{
-            echo "thiw will run only if the piepeline failyres"
-        }
-        changed{
-            echo "these wwill executed only the result will changed"
-        }
-        aborted{
-            echo "these will be exexuted only when pipelne is manually aborted"
-        }
+
     }
 }
