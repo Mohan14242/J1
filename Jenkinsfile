@@ -2,7 +2,7 @@ pipeline{
     agent any
     stages{
         stage("build"){
-            agent { lable "agent1"}
+            agent { label "agent1"}
             steps{
                 sh '''
                 ls -la'''
@@ -10,7 +10,7 @@ pipeline{
             }
         }
         stage("test"){
-            agent { lable "agent2" }
+            agent { label "agent2" }
             steps{
                script{
                 ls -la
