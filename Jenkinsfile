@@ -1,17 +1,23 @@
-pipeline{
-    agent { node { label 'agent1'}}
-    stages{
-        stage("test stage"){
-            steps{
-                script{
+pipeline {
+    agent {
+        label 'agent1'
+    }
+    stages {
+        stage("Test Stage") {
+            steps {
+                script {
+                    // Install npm dependencies
                     sh 'npm install'
                 }
             }
         }
-        stage("sonar scanner"){
-            steps{
-                script{
-                    sh 'sonar-scanner'
+        stage("SonarQube Scanner") {
+            steps {
+                script {
+                    // Run SonarQube scanner
+                    withSonarQubeEnv('SonarQube') {
+                        sh 'sonar-scanner'
+                    }
                 }
             }
         }
