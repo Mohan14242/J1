@@ -4,7 +4,14 @@ pipeline{
         stage("test stage"){
             steps{
                 script{
-                    sh 'ls -la'
+                    sh 'npm install'
+                }
+            }
+        }
+        stage("sonar scanner"){
+            steps{
+                script{
+                    sh 'sonar-scanner'
                 }
             }
         }
