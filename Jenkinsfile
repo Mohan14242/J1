@@ -1,30 +1,12 @@
 pipeline{
-    agent any 
-    options{
-        timeout(time:2,unit:"MINUTES")
-    }
+    agent { node{ lable 'agent1'}}
     stages{
-        stage("mohan"){
-            options{
-            timeout(time:1,unit:"MINUTES")
-            }
+        stage("test stage"){
             steps{
                 script{
-                    sh'sleep 100'
+                    sh 'ls -la'
                 }
             }
         }
-        stage("chiru"){
-            options{
-            timeout(time:1,unit:"MINUTES")
-            }
-            steps{
-                script{
-                    sh "sleep 100"
-                }
-            }
-        }
-
-        
     }
 }
