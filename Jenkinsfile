@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'agent1'
+       node { label 'agent1' }
     }
     stages {
         stage("Test Stage") {
@@ -14,8 +14,7 @@ pipeline {
         stage("SonarQube Scanner") {
             steps {
                 script {
-                    // Run SonarQube scanner
-                    withSonarQubeEnv('SonarQube') {
+        
                         sh 'sonar-scanner'
                     }
                 }
