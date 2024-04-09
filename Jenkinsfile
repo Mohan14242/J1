@@ -10,7 +10,7 @@ pipeline {
                 git clone https://github.com/Mohan14242/J1.git
                 cd J1
                 git pull 
-                zip -r ./* catalogue.zip '''
+                zip catalogue.zip -r ,/* '''
             }
         }
         stage('Upload to Nexus') {
