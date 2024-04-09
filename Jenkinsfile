@@ -12,7 +12,7 @@ pipeline {
                 sh '''
                 pwd  
                 ls -l
-                zip -r ${env.ARTIFACT_NAME} ./*
+                zip -r "${ARTIFACT_NAME}" ./*
                 '''
             }
         }
@@ -25,7 +25,7 @@ pipeline {
                     credentialsId: 'aws-mohan',
                     secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
                 ]]) {
-                    sh "aws s3 cp ${env.ARTIFACT_NAME} s3://${env.AWS_BUCKET}/${env.ARTIFACT_NAME}"
+                    sh "aws s3 cp \"${ARTIFACT_NAME}\" s3://${AWS_BUCKET}/\"${ARTIFACT_NAME}\""
                 }
             }
         }
