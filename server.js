@@ -189,3 +189,21 @@ const port = process.env.CATALOGUE_SERVER_PORT || '8080';
 app.listen(port, () => {
     logger.info('Started on port', port);
 });
+const logger = pino({
+    level: 'info',
+    prettyPrint: false,
+    useLevelLabels: true
+});
+const expLogger = expPino({
+    logger: logger
+});
+
+// MongoDB
+// Actually, this is done by developers. But to reflect we are adding some content and imagine this extra feature
+var db;
+var collection;
+var mongoConnected = false;
+
+const app = express();
+
+app.use(expLogger);
