@@ -7,7 +7,7 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                cd /home/centos/J1
+                ls -la
                 zip catalogue.zip -r ./* '''
             }
         }
