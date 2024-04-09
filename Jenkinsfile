@@ -11,6 +11,7 @@ pipeline {
                 cd /home/centos/workspace/
                 zip -r catalogue.zip sonar-pipeline/*
                 pwd
+                ls -la
 
                '''
             }
