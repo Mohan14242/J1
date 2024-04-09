@@ -1,0 +1,24 @@
+pipeline {
+    agent {
+        node { label 'agent2' }
+    }
+    stages {
+        stage("Test Stage") {
+            steps {
+                script {
+                    // Install Python dependencies
+                    sh 'pip install -r requirements.txt'
+                    // Run tests
+                    sh 'pytest'
+                }
+            }
+        }
+        stage("SonarQube Scanner") {
+            steps {
+                script {
+                    sh 'sonar-scanner'
+                }
+            }
+        }
+    }
+}
