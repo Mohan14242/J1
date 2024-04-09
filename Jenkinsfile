@@ -7,8 +7,7 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                cd ..
-                ls -la
+                pwd
                 zip -r J1.zip J1'''
             }
         }
