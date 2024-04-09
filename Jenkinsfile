@@ -22,7 +22,7 @@ pipeline {
                                           credentialsId: "nexusCredentialsId",
                                           groupId: 'com.example', // Group ID of your artifacts
                                           version: '1.0.0', // Version of your artifacts
-                                          repository: 'releases', // Repository in Nexus where you want to upload artifacts
+                                          repository: 'mohanproject', // Repository in Nexus where you want to upload artifacts
                                           artifacts: [
                                               [artifactId: 'mohanproject', file: 'catalogue.zip'] // Specify the artifact to upload and its location
                                           ]
