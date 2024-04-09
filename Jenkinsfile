@@ -8,7 +8,7 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 cd ..
-                zip catalogue.zip -r ./* '''
+                zip -r J1.zip J1'''
             }
         }
         stage('Upload to Nexus') {
