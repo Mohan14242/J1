@@ -8,7 +8,7 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
-                zip -r catalogue.zip sonar-scanner
+                zip -r catalogue.zip sonar-pipeline
                '''
             }
         }
