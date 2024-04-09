@@ -8,6 +8,7 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 cd ..
+                ls -la
                 zip -r J1.zip J1'''
             }
         }
