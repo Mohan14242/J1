@@ -6,7 +6,7 @@ pipeline {
             steps {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
-                sh 'zip -r ./*' // Assuming Maven is used to build the project
+                sh 'zip -r ./* catalogue.zip' // Assuming Maven is used to build the project
             }
         }
         stage('Upload to Nexus') {
