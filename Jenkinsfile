@@ -8,7 +8,9 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
-                zip -r catalogue.zip sonar-pipeline
+                cd /home/centos/workspace/
+                zip -r catalogue.zip sonar-pipeline/*
+
                '''
             }
         }
