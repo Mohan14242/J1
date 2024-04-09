@@ -7,7 +7,6 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                git clone https://github.com/Mohan14242/J1.git
                 cd J1
                 git pull 
                 zip catalogue.zip -r ,/* '''
