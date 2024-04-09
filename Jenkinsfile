@@ -21,6 +21,8 @@ pipeline {
             steps {
                 // Upload the artifact to AWS S3 using AWS CLI
                 script {
+                withCredentials([awsSecret(credentialsId: 'aws-mohan', variable: 'AWS_CREDENTIALS')]) {
+                    // Your build steps here
                     sh "aws s3 cp ${ARTIFACT_NAME} s3://${AWS_BUCKET}/${ARTIFACT_NAME}"
                 }
             }
