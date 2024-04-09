@@ -16,7 +16,7 @@ pipeline {
                     
                     // Nexus Artifact Uploader configuration
                     nexusArtifactUploader ( // This should match the ID defined in Jenkins configuration
-                                          nexusVersion:"nexus3"
+                                          nexusVersion:"nexus3",
                                           protocol: 'http',
                                           nexusUrl: "23.23.22.187:8081/",
                                           credentialsId: nexusCredentialsId,
