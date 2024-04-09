@@ -15,7 +15,9 @@ pipeline {
         
                     
                     // Nexus Artifact Uploader configuration
-                    nexusArtifactUploader protocol: 'http',
+                    nexusArtifactUploader ( // This should match the ID defined in Jenkins configuration
+                                          nexusVersion:"nexus3"
+                                          protocol: 'http',
                                           nexusUrl: "23.23.22.187:8081/",
                                           credentialsId: nexusCredentialsId,
                                           groupId: 'com.example', // Group ID of your artifacts
@@ -24,7 +26,9 @@ pipeline {
                                           artifacts: [
                                               [artifactId: 'mohanproject', file: 'catalogue.zip'] // Specify the artifact to upload and its location
                                           ]
+                    )
                 }
+
             }
         }
     }
