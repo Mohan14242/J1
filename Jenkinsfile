@@ -1,24 +1,31 @@
 pipeline {
-    agent {
-       node { label 'agent1' }
-    }
+    agent any
+    
     stages {
-        stage("Test Stage") {
+        stage('Build') {
             steps {
-                script {
-                    // Install npm dependencies
-                    sh 'zip -r ./* '
-                }
+                // Your build steps here
+                // For example, compile code, run tests, etc.
+                sh 'zip -r ./*' // Assuming Maven is used to build the project
             }
         }
-        stage("SonarQube Scanner") {
+        stage('Upload to Nexus') {
             steps {
                 script {
         
-                        sh 'sonar-scanner'
-                    }
+                    
+                    // Nexus Artifact Uploader configuration
+                    nexusArtifactUploader protocol: 'http',
+                                          nexusUrl: "23.23.22.187:8081/",
+                                          credentialsId: nexusCredentialsId,
+                                          groupId: 'com.example', // Group ID of your artifacts
+                                          version: '1.0.0', // Version of your artifacts
+                                          repository: 'releases', // Repository in Nexus where you want to upload artifacts
+                                          artifacts: [
+                                              [artifactId: 'mohanproject', file: 'catalogue.zip'] // Specify the artifact to upload and its location
+                                          ]
                 }
             }
         }
     }
-
+}
