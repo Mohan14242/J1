@@ -7,7 +7,7 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                owd
+                pwd
 
                '''
             }
