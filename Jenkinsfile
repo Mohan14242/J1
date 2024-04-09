@@ -8,7 +8,6 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
-                cd /path/to/your/folder
                 zip -r catalogue.zip ./* 
 
 
