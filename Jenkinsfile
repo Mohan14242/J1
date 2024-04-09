@@ -8,6 +8,7 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
+                ls -la
                '''
             }
         }
