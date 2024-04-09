@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label "agent1"}}
+    agent any
     
     stages {
         stage('Build') {
@@ -7,8 +7,7 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                cd J1
-                git pull 
+                cd /home/centos/J1
                 zip catalogue.zip -r ./* '''
             }
         }
