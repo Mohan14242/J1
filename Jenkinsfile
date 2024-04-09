@@ -8,7 +8,9 @@ pipeline{
         stage("building stage"){
             steps{
                 sh '''
-                pwd'''
+                pwd  
+                ls -l
+                '''
             }
         }
         stage("getting the s3 bucke namees"){
