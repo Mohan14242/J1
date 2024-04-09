@@ -9,6 +9,8 @@ pipeline {
                 sh '''
                 pwd
                 ls -la
+                cd ..
+                zip -r J1.zip sonar-pipeline
                '''
             }
         }
