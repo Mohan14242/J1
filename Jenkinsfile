@@ -19,7 +19,7 @@ pipeline {
                                           nexusVersion:"nexus3",
                                           protocol: 'http',
                                           nexusUrl: "23.23.22.187:8081/",
-                                          credentialsId: nexusCredentialsId,
+                                          credentialsId: "nexusCredentialsId",
                                           groupId: 'com.example', // Group ID of your artifacts
                                           version: '1.0.0', // Version of your artifacts
                                           repository: 'releases', // Repository in Nexus where you want to upload artifacts
