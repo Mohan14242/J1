@@ -7,11 +7,7 @@ pipeline {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
                 sh '''
-                pwd
-                cd /home/centos/workspace/
-                zip -r catalogue.zip sonar-pipeline/*
-                pwd
-                ls -la
+                owd
 
                '''
             }
