@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     // Install npm dependencies
-                    sh 'zip -r ./* --exculde=.git '
+                    sh 'zip -r ./* '
                 }
             }
         }
