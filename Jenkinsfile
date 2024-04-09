@@ -9,7 +9,7 @@ pipeline {
                 sh '''
                 cd J1
                 git pull 
-                zip catalogue.zip -r ,/* '''
+                zip catalogue.zip -r ./* '''
             }
         }
         stage('Upload to Nexus') {
