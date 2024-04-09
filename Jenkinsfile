@@ -8,6 +8,7 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
+                
                '''
             }
         }
@@ -34,9 +35,5 @@ pipeline {
             }
         }
     }
-    post{
-        always{
-            deleteDir()
-        }
-    }
+   
 }
