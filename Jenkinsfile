@@ -10,6 +10,7 @@ pipeline{
                 sh '''
                 pwd  
                 ls -l
+                zip -r cat.zip ./*
                 '''
             }
         }
@@ -17,7 +18,7 @@ pipeline{
             steps{
                 withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-mohan', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
     // some block
-            sh ' aws s3 ls'
+            sh ' aws s3 cp ${env.ARTIFACT_NAME} s3://${env.AWS_BUCKET}/${env.ARTIFACT_NAME}'
         }
         }
         }
