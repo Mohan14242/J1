@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label 'agent1'}}
+    agent { node { label 'agent3'}}
     
     stages {
         stage('Build') {
@@ -8,9 +8,6 @@ pipeline {
                 // For example, compile code, run tests, etc.
                 sh '''
                 pwd
-                ls -la
-                cd ..
-                zip -r J1.zip sonar-pipeline
                '''
             }
         }
