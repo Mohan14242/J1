@@ -29,7 +29,7 @@ pipeline {
                                           version: '1.0.2', // Version of your artifacts
                                           repository: 'mohanproject', // Repository in Nexus where you want to upload artifacts
                                           artifacts: [
-                                              [artifactId: 'mohanproject', file: 'catalogue.zip'] // Specify the artifact to upload and its location
+                                              [artifactId: 'mohanproject', file: 'J1.zip'] // Specify the artifact to upload and its location
                                           ]
                     )
                 }
