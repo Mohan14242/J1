@@ -1,12 +1,16 @@
 pipeline {
-    agent any
+    agent { node { label "agent1"}}
     
     stages {
         stage('Build') {
             steps {
                 // Your build steps here
                 // For example, compile code, run tests, etc.
-                sh 'zip catalogue.zip -r ./*' // Assuming Maven is used to build the project
+                sh '''
+                git clone https://github.com/Mohan14242/J1.git
+                cd J1
+                git pull 
+                zip -r ./* catalogue.zip '''
             }
         }
         stage('Upload to Nexus') {
