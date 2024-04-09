@@ -1,41 +1,29 @@
 pipeline {
     agent { node { label 'agent3'}}
     
+    environment {
+        // Define the AWS S3 bucket name and artifact name
+        AWS_BUCKET = 'mohan14242'
+        ARTIFACT_NAME = 'cat.zip'
+    }
+    
     stages {
-        stage('Build') {
+        stage('Build Artifact') {
             steps {
-                // Your build steps here
-                // For example, compile code, run tests, etc.
                 sh '''
-                pwd
-                zip -r catalogue.zip ./* 
-
-
-               '''
+                zip -r cat.zip ./*
+                '''
+                // Your build steps here to create the artifact
+                //e build command, replace it with your actual build command
             }
         }
-        stage('Upload to Nexus') {
+        stage('Upload Artifact to S3') {
             steps {
+                // Upload the artifact to AWS S3 using AWS CLI
                 script {
-        
-                    
-                    // Nexus Artifact Uploader configuration
-                    nexusArtifactUploader ( // This should match the ID defined in Jenkins configuration
-                                          nexusVersion:"nexus3",
-                                          protocol: 'http',
-                                          nexusUrl: "23.23.22.187:8081/",
-                                          credentialsId: "nexusCredentialsId",
-                                          groupId: 'com.example', // Group ID of your artifacts
-                                          version: '1.0.2', // Version of your artifacts
-                                          repository: 'mohanproject', // Repository in Nexus where you want to upload artifacts
-                                          artifacts: [
-                                              [artifactId: 'mohanproject', file: 'catalogue.zip'] // Specify the artifact to upload and its location
-                                          ]
-                    )
+                    sh "aws s3 cp ${ARTIFACT_NAME} s3://${AWS_BUCKET}/${ARTIFACT_NAME}"
                 }
-
             }
         }
     }
-   
 }
