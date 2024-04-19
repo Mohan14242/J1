@@ -2,3 +2,4 @@
 
 def configmap=[ application="catalogue",componenet="catalogue"]
 
+mohan.names(configmap)
