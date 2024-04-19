@@ -6,3 +6,4 @@ def configmap={
 }
 
 mohan.call()
+my.sayhello()
