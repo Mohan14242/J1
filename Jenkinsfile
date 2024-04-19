@@ -1,2 +1,2 @@
 #!groovy 
-@libary('mohan')
+@Library('mohan')
