@@ -3,6 +3,7 @@
 def configmap={
     application:"nodejs"
     componet:"catalogue"
+    name: "mohan"
 }
 
 
