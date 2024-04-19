@@ -1,7 +1,7 @@
 @Library('mohan') _ // Load the shared library
 
 def configmap={
-    application="catalogue"
+    application="catalogue",
     componenet="mohan"
 }
 
