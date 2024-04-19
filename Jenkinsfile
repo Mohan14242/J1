@@ -5,5 +5,3 @@ def configmap={
     componenet="mohan"
 }
 
-mohan.call()
-my.sayHello()
