@@ -1,5 +1,16 @@
-@Library('mohan') _ // Load the shared library
+@Library('mohan') _
 
-def configmap=[ application="catalogue",componenet="catalogue"]
-
-mohan.names(configmap)
+pipeline {
+    agent any
+    
+    stages {
+        stage('Example') {
+            steps {
+                script {
+                    def configmap = [application: "catalogue", component: "catalogue"]
+                    mohan.names(configmap) // Call the 'names' function from the 'mohan' shared library
+                }
+            }
+        }
+    }
+}
