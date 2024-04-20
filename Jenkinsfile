@@ -19,7 +19,7 @@ pipeline {
                     def choice = params.BROWSER
                     def password = params.DB_PASSWORD
                     def maps = [prod_deploy: prod_deploy, environment: environment, choice: choice, password: password]
-                    mohan.names(maps) // Call the 'names' function from the shared library
+                    chiru.names() // Call the 'names' function from the shared library
                 }
             }
         }
