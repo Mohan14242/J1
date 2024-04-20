@@ -8,6 +8,7 @@ pipeline {
             steps {
                 script {
                     chiru.names() // Call the 'names' function from the shared library
+                    mohan.exam()
                 }
             }
         }
