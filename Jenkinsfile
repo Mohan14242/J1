@@ -8,8 +8,8 @@ pipeline {
             steps {
                 script {
                     def maps=["name":"mohan","age":25,"salary":30000]
-                    chiru.names() // Call the 'names' function from the shared library
-                    mohan.exam()
+                    chiru.names(maps) // Call the 'names' function from the shared library
+                    mohan.names(maps)
                 }
             }
         }
