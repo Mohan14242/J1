@@ -7,9 +7,9 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                    def maps=["name":"mohan","age":25,"salary":30000]
-                    chiru.names(maps) // Call the 'names' function from the shared library
-                    mohan.names(maps)
+                    def values=[1,2,3,4,5,6,7,8]
+                    chiru.list_values(values)
+
                 }
             }
         }
