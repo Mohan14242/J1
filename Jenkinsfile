@@ -7,7 +7,7 @@ pipeline {
         stage('Example') {
             steps {
                 script {
-                    mohan.names() // Call the 'names' function from the shared library
+                    chiru.names() // Call the 'names' function from the shared library
                 }
             }
         }
