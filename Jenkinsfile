@@ -3,14 +3,13 @@ pipeline{
     stages{
         stage("terraform stage"){
             steps{
-                script{
-                    sh '''
-                    git clone https://github.com/Mohan14242/terraform-deve.git
-                    cd terraform-deve
-                    cd module-vpc 
-                    terraform init 
-                    terraform plan 
-                    '''
+                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
+                    script{
+                        sh '''
+                        terraform init 
+                        terraform plan '''
+                    }
+    // some block
                 }
             }
         }
