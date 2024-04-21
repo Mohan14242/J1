@@ -5,7 +5,10 @@ pipeline{
             steps{
                 script{
                     sh '''
-                    pwd'''
+                    pwd
+                    cd /home/centos/terraform-deve
+                    cd  module-vpc
+                    '''
                 }
             }
         }
