@@ -1,5 +1,5 @@
 pipeline {
-    agent { node { label "terraform1" } }
+    agent any 
     environment {
         package = ''
     }
