@@ -4,7 +4,7 @@ pipeline{
         stage("terraform stage"){
             steps{
                 script{
-                    terraform init
+                    pwd
                 }
             }
         }
