@@ -1,17 +1,17 @@
 pipeline{
-    agent {node { label "terraform"}}
+    agent {node { label "terraform1"}}
     stages{
         stage("terraform stage"){
             steps{
                 script{
                     sh '''
-                    pwd
-                    cd /home/centos/terraform-deve
-                    cd  module-vpc
-                    pwd
-                    ls -l
-                    terraform init
-                    terraform plan
+                    sudo labauto
+
+                    git clone https://github.com/Mohan14242/terraform-deve.git
+                    cd terraform-deve
+                    cd module-vpc 
+                    terraform init 
+                    terraform plan 
                     '''
                 }
             }
