@@ -9,7 +9,7 @@ pipeline {
                 script {
                     // Read package.json file and extract version
                     def package = readJSON(file: "package.json")
-                    version = package.version // Store the version in the environment variable
+                    def version = package.version // Store the version in the environment variable
                     echo "Software version: $version"
                 }
             }
