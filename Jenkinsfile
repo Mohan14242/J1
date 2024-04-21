@@ -1,14 +1,14 @@
 pipeline {
-    agent any 
+    agent any
     environment {
-        version = '' // Define the version variable here
+        VERSION = '' // Define the version variable here (replace with actual version)
     }
     stages {
         stage("getting the version of the file") {
             steps {
                 script {
                     def package = readJSON(file: 'package.json')
-                    def version = package.version // Store the version in the environment variable
+                    def version = package.version // Store the version in a variable
                     echo "Software version: $version"
                 }
             }
@@ -16,8 +16,7 @@ pipeline {
         stage("printing the version") {
             steps {
                 script {
-                    // Access the version from the environment
-                    def packageVersion = env.version
+                    def packageVersion = env.VERSION // Access the version from the environment
                     sh "echo 'The package version is ${packageVersion}'"
                 }
             }
