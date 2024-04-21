@@ -9,6 +9,7 @@ pipeline{
                     cd /home/centos/terraform-deve
                     cd  module-vpc
                     pwd
+                    ls -l
                     '''
                 }
             }
