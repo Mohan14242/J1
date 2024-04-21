@@ -1,18 +1,32 @@
 pipeline{
     agent {node { label "terraform1"}}
+    environment{
+        package=''
+    }
     stages{
-        stage("terraform stage"){
+        stage("getting the version of the file "){
             steps{
-                withCredentials([aws(accessKeyVariable: 'AWS_ACCESS_KEY_ID', credentialsId: 'aws-access', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY')]) {
-                    script{
-                        sh '''
-                        cd /home/centos/terraform-deve/module-vpc/
-                        terraform init 
-                        terraform plan '''
-                    }
-    // some block
+                def package=readJSON file="package.json"
+                def version=package.verion 
+                script{
+                    echo "in this we are getting the software version"
+                }
+
+
+
+            }
+            
+        }
+        stage("printing the version"){
+            steps{
+                script{
+                    sh '''
+                    the package version is ${package}'''
                 }
             }
+
+
+
         }
     }
 }
