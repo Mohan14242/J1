@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     environment {
-        package = ''
+        version = ''
     }
     stages {
         stage("getting the version of the file") {
@@ -19,7 +19,7 @@ pipeline {
                 script {
                     // You need to define 'package' here or pass it from the previous stage
                     // If you want to use it across stages, you need to define it at the top level
-                    def package = env.package
+                    def package = env.version
                     sh "echo 'The package version is ${package}'"
                 }
             }
