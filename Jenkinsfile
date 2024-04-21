@@ -4,7 +4,8 @@ pipeline{
         stage("terraform stage"){
             steps{
                 script{
-                    pwd
+                    sh '''
+                    pwd'''
                 }
             }
         }
