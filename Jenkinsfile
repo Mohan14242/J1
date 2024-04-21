@@ -10,6 +10,7 @@ pipeline{
                     cd  module-vpc
                     pwd
                     ls -l
+                    terraform plan
                     '''
                 }
             }
