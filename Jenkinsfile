@@ -1,4 +1,5 @@
 def jsonContent
+def version
 pipeline {
     agent any 
     stages {
@@ -6,6 +7,7 @@ pipeline {
             steps {
                 script {
                     jsonContent = readFile(file:'package.json')
+                    echo " $jsonContent"
                     
                 }
             }
