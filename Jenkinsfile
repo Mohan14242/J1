@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    environment {
-        VERSION = '' // Define the version variable here (replace with actual version)
-    }
+    
     stages {
         stage('get the version') {
             steps {
