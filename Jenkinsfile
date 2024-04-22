@@ -8,11 +8,7 @@ pipeline {
             steps {
                 script {
                     jsonContent = readFile(file: 'package.json')
-                    jsonData = readJSON text: jsonContent
-
-// Access the version property
-                    version = jsonData.'version'
-                    echo "Version: ${version}"
+                    version=jsonContent.'version'
 
                     
                     
