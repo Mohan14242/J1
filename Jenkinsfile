@@ -7,6 +7,7 @@ pipeline {
             steps {
                 script {
                     jsonContent = readFile(file:'package.json')
+                    version=jsonContent['version']
                     
                     
                 }
