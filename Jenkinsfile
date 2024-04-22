@@ -4,7 +4,8 @@ pipeline{
         stage('build'){
             steps{
                 script{
-                    echo "mohan"
+                    def p=readJSON(file:'package.json')
+                    def version=p.version
                 }
             }
         }
