@@ -1,5 +1,4 @@
 def jsonContent
-def version
 pipeline {
     agent any 
     stages {
@@ -7,7 +6,7 @@ pipeline {
             steps {
                 script {
                     jsonContent = readFile(file:'package.json')
-                    version=jsonContent['version']
+                     def version=jsonContent['version']
                     
                     
                 }
