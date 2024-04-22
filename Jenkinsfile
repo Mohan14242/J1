@@ -7,7 +7,7 @@ pipeline {
         stage("getting the version of the file") {
             steps {
                 script {
-                     package = readJSON(file:"package.json")
+                    def package = readJSON file: "package.json" // Corrected syntax
                     def version = package.version // Store the version in a variable
                     echo "Software version: $version"
                 }
