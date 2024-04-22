@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     jsonContent = readFile(file:'package.json')
-                    echo " $jsonContent.Version"
+                    echo " ${jsonContent.version}"
                     
                 }
             }
