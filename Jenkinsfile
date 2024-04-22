@@ -4,8 +4,9 @@ pipeline {
         stage('build') {
             steps {
                 script {
-                    def p = readJSON(file: 'package.json')
-                    def version = p.version
+                    def jsonContent = readFile 'package.json'
+                    def package = new groovy.json.JsonSlurper().parseText(jsonContent)
+                    def version = package.version
                     echo "Software version: $version"
                 }
             }
