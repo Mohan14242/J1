@@ -2,8 +2,10 @@ pipeline {
     agent any  
     stages{
         stage("testing the statge"){
-            script{
-                echo "the parameters are "
+            steps{
+                script{
+                    echo "the parameters are "
+            }
             }
         }
     }
