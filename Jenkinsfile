@@ -1,7 +1,7 @@
 pipeline {
     agent any  
     parameters{
-        string(name:"mohan",value:"1.0.0")
+        string(name: "mohan", defaultValue: "1.0.0", description: "Version number")
     }
     stages{
         stage("testing the statge"){
