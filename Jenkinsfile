@@ -1,18 +1,9 @@
-def jsonContent
-def version
-def jsonData
 pipeline {
-    agent any 
-    stages {
-        stage('build') {
-            steps {
-                script {
-                    jsonContent = readFile(file: 'package.json')
-                    version=jsonContent.'version'
-
-                    
-                    
-                }
+    agent any  
+    stages{
+        stage("testing the statge"){
+            script{
+                echo "the parameters are "
             }
         }
     }
