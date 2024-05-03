@@ -7,7 +7,7 @@ pipeline {
         stage("testing the statge"){
             steps{
                 script{
-                    echo "the parameters are ${params.PARAMETER_NAME}"
+                    echo "the parameters are ${params.mohan}"
             }
             }
         }
