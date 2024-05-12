@@ -18,7 +18,8 @@ pipeline {
         stage("installing snyk"){
             steps{
                 sh '''
-                npm install -g snyk
+                sudo yum install nodejs npm
+                sudo  npm install -g snyk
                 '''
             }
         }
