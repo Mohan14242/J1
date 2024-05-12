@@ -5,6 +5,9 @@ pipeline {
             steps {
                 sh '''
                 sudo yum install nodejs npm -y
+                sudo curl https://static.snyk.io/cli/latest/snyk-linux -o snyk
+                sudo chmod +x ./snyk 
+                sudo mv ./snyk /usr/local/bin/ 
                 sudo npm install -g snyk
                 '''
             }
