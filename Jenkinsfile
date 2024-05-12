@@ -11,7 +11,7 @@ pipeline {
         }
         stage('snyk stage') {
             steps {
-                withCredentials([string(credentialsId: 'snyk-api-token', variable: 'SNYK_TOKEN')]) {
+                withCredentials([string(credentialsId: 'snyk-auth', variable: 'SNYK_TOKEN')]) {
                     sh "snyk test --all-projects --json --org=mohan14242"
                 }
             }
