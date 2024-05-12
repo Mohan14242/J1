@@ -1,5 +1,5 @@
 pipeline {
-    agent {node { lable '54.92.201.154'}}
+    agent {node { label '54.92.201.154'}}
     stages {
         stage("installing snyk") {
             steps {
