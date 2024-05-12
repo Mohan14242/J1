@@ -1,9 +1,5 @@
 pipeline {
     agent any  
-    parameters{
-        string(name: "param1", defaultValue: "default_value1", description: "Parameter 1 description")
-        booleanParam(name: "param3", defaultValue: true, description: "Parameter 3 description")
-    }
     stages{
         stage("testing the statge"){
             steps{
